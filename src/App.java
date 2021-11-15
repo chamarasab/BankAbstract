@@ -14,6 +14,7 @@ public class App {
         byte option = scanner.nextByte();           //get user input
         if (option==1) {
             //Saving Account
+            System.out.println("Saving Account");
             String a,n;
             Double b;
             System.out.println(ANSI_CYAN + "Enter Account No: " + ANSI_RESET);
@@ -43,8 +44,11 @@ public class App {
             saving.display();
         }else if (option==2) {
             //Current Account
+            System.out.println("Current Account");
+            
         }else if(option==3){
             //Fixed Deposit Account
+            System.out.println("Fixed Deposit Account");
         }
 
         scanner.close();
