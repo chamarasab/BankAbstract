@@ -44,11 +44,45 @@ public class App {
             saving.display();
         }else if (option==2) {
             //Current Account
-            System.out.println("Current Account");
+            System.out.println(ANSI_RED + "Current Account" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "Minimum deposit required to open a Sampath Current Account: 15000/=" + ANSI_RESET);
+            System.out.println(ANSI_YELLOW + "Enter account no : " + ANSI_RESET);
+            String a = scanner.next();                  //user input acc no.
+            System.out.println(ANSI_YELLOW + "Enter Name : " + ANSI_RESET);
+            String n = scanner.next();                  //user input acc holder's name
+            System.out.println(ANSI_YELLOW + "Enter amount : " + ANSI_RESET);
+            double b = scanner.nextDouble();
+            if (b>=15000) {
+                Account current = new Current(a, n, b);          //account created  
+                
+                System.out.println(ANSI_RED + "Enter amount to withdraw : " + ANSI_RESET);  //withdraw
+                double withdraw = scanner.nextDouble();
+                current.withdraw(withdraw);
+                current.display();
+
+                System.out.println(ANSI_RED + "\n Enter amount to deposit : " + ANSI_RESET);    //deposit 
+                double deposit = scanner.nextDouble();
+                current.deposit(deposit);
+                current.display();
+            }else{
+                System.out.println("Error - Enter amount greater than 15000/=");
+            }
             
         }else if(option==3){
             //Fixed Deposit Account
             System.out.println("Fixed Deposit Account");
+            System.out.println("Enter account no : ");
+            String a = scanner.next();                  //user input acc no.
+            System.out.println("Enter Name : ");
+            String n = scanner.next();                  //user input acc holder's name
+            System.out.println("Minimum deposit is 25000/=  Interest rate is 5.5% \nEnter amount : ");
+            double b = scanner.nextDouble();            //user input deposit amount
+            if (b>25000) {
+                Account fixed = new Fixed(a, n, b);     //creating account
+                fixed.setDepositPeriodInMonths(12.0);
+                fixed.getInterest();                    //display calculated interest amounts
+            }else{System.out.println("Enter amount above 25000/=");}
+                                   
         }
 
         scanner.close();

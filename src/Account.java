@@ -41,4 +41,8 @@ abstract class Account {
         System.out.println("Name : " + getName());
         System.out.println("Balance : " + getBalance() + ANSI_RESET);
     }
+
+    public void setDepositPeriodInMonths(double d){}; //gives override to Fixed Acc
+
+    public void getInterest() {};                    //gives override to Fixed Acc
 }
