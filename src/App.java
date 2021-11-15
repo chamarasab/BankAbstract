@@ -7,11 +7,11 @@ public class App {
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_RED = "\u001B[31m";
     public static void main(String[] args) throws Exception {
-        System.out.println("Welcome to Bank");
+        System.out.println(ANSI_YELLOW + "Welcome to Bank" + ANSI_RESET);
 
-        System.out.println("Press 1 to Saving Account\nPress 2 to Current Account\nPress 3 to Fixed Deposit Account");
+        System.out.println(ANSI_GREEN + "Press 1 to Saving Account\nPress 2 to Current Account\nPress 3 to Fixed Deposit Account" + ANSI_RESET);
         Scanner scanner = new Scanner(System.in);
-        byte option = scanner.nextByte();
+        byte option = scanner.nextByte();           //get user input
         if (option==1) {
             //Saving Account
             String a,n;
